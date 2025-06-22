@@ -44,9 +44,18 @@ useHead({
       <h1 class="mb-4 text-5xl text-gray-900 font-light dark:text-gray-100">
         defineShortcuts
       </h1>
-      <p class="text-lg text-gray-600 font-light dark:text-gray-400">
+      <p class="mb-6 text-lg text-gray-600 font-light dark:text-gray-400">
         A composable for keyboard shortcuts in Vue
       </p>
+      <RouterLink
+        to="/hotkeys-demo"
+        class="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900"
+      >
+        View Hotkeys Demo
+        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </RouterLink>
     </div>
 
     <!-- Live Demo Section -->

@@ -97,6 +97,6 @@ This is a **Vitesse-based Vue 3 application** using modern tooling and conventio
 
 **CRITICAL**: After making any code edits, ALWAYS run the following commands to ensure code quality:
 
-1. `pnpm lint` - Check and fix linting issues
+1. `pnpm lint:fix` - Check and fix linting issues
 2. `pnpm typecheck` - Verify TypeScript types are correct
 3. If either command reports errors, fix them immediately before considering the task complete

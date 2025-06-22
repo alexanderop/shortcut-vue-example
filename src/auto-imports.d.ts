@@ -19,10 +19,14 @@ declare global {
   const createApp: typeof import('vue')['createApp']
   const createEventHook: typeof import('@vueuse/core')['createEventHook']
   const createGlobalState: typeof import('@vueuse/core')['createGlobalState']
+  const createHotkey: typeof import('./composables/defineShortcuts-hotkeys')['createHotkey']
+  const createHotkeyConflictDetector: typeof import('./composables/defineShortcuts-hotkeys')['createHotkeyConflictDetector']
   const createInjectionState: typeof import('@vueuse/core')['createInjectionState']
+  const createKeySequenceDetector: typeof import('./composables/defineShortcuts-hotkeys')['createKeySequenceDetector']
   const createReactiveFn: typeof import('@vueuse/core')['createReactiveFn']
   const createRef: typeof import('@vueuse/core')['createRef']
   const createReusableTemplate: typeof import('@vueuse/core')['createReusableTemplate']
+  const createScopedHotkeys: typeof import('./composables/defineShortcuts-hotkeys')['createScopedHotkeys']
   const createSharedComposable: typeof import('@vueuse/core')['createSharedComposable']
   const createTemplatePromise: typeof import('@vueuse/core')['createTemplatePromise']
   const createUnrefFn: typeof import('@vueuse/core')['createUnrefFn']
@@ -207,6 +211,7 @@ declare global {
   const useMemoize: typeof import('@vueuse/core')['useMemoize']
   const useMemory: typeof import('@vueuse/core')['useMemory']
   const useModel: typeof import('vue')['useModel']
+  const useModifierKeys: typeof import('./composables/defineShortcuts-hotkeys')['useModifierKeys']
   const useMounted: typeof import('@vueuse/core')['useMounted']
   const useMouse: typeof import('@vueuse/core')['useMouse']
   const useMouseInElement: typeof import('@vueuse/core')['useMouseInElement']
@@ -316,6 +321,9 @@ declare global {
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
   // @ts-ignore
+  export type { HotkeysConfig, HotkeysOptions } from './composables/defineShortcuts-hotkeys'
+  import('./composables/defineShortcuts-hotkeys')
+  // @ts-ignore
   export type { ShortcutsConfig } from './composables/defineShortcuts'
   import('./composables/defineShortcuts')
 }
@@ -338,10 +346,14 @@ declare module 'vue' {
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
+    readonly createHotkey: UnwrapRef<typeof import('./composables/defineShortcuts-hotkeys')['createHotkey']>
+    readonly createHotkeyConflictDetector: UnwrapRef<typeof import('./composables/defineShortcuts-hotkeys')['createHotkeyConflictDetector']>
     readonly createInjectionState: UnwrapRef<typeof import('@vueuse/core')['createInjectionState']>
+    readonly createKeySequenceDetector: UnwrapRef<typeof import('./composables/defineShortcuts-hotkeys')['createKeySequenceDetector']>
     readonly createReactiveFn: UnwrapRef<typeof import('@vueuse/core')['createReactiveFn']>
     readonly createRef: UnwrapRef<typeof import('@vueuse/core')['createRef']>
     readonly createReusableTemplate: UnwrapRef<typeof import('@vueuse/core')['createReusableTemplate']>
+    readonly createScopedHotkeys: UnwrapRef<typeof import('./composables/defineShortcuts-hotkeys')['createScopedHotkeys']>
     readonly createSharedComposable: UnwrapRef<typeof import('@vueuse/core')['createSharedComposable']>
     readonly createTemplatePromise: UnwrapRef<typeof import('@vueuse/core')['createTemplatePromise']>
     readonly createUnrefFn: UnwrapRef<typeof import('@vueuse/core')['createUnrefFn']>
@@ -523,6 +535,7 @@ declare module 'vue' {
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
     readonly useMemory: UnwrapRef<typeof import('@vueuse/core')['useMemory']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly useModifierKeys: UnwrapRef<typeof import('./composables/defineShortcuts-hotkeys')['useModifierKeys']>
     readonly useMounted: UnwrapRef<typeof import('@vueuse/core')['useMounted']>
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
     readonly useMouseInElement: UnwrapRef<typeof import('@vueuse/core')['useMouseInElement']>

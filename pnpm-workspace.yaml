@@ -1,5 +1,7 @@
 packages: []
 
+catalog:
+  hotkeys-js: ^3.13.14
 catalogs:
 
   build:
